@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <form (submit)="addTask(newTitle, newDescription, newImage)">
+      <div class="form-group">
+        <input type="text" placeholder="Titulo de Tarea" #newTitle class="form-control">
+      </div><br/>
+      <div class="form-group">
+        <textarea #newDescription cols="30" rows="10" class="form-control" placeholder="Descripción de Tarea"></textarea>
+      </div>
+      <div class="form-group">
+      <input #newImage type="file" className="form-control file-upload" accept="image/*" id="newImage"/>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+    </form>
+  </div>
+</div>

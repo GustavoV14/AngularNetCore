@@ -1,0 +1,40 @@
+<div class="latest-articles-list content-wrapper" id="maincontent" tabindex="-1">
+  <div class="latest-articles-list content-wrapper" id="maincontent" tabindex="-1">
+  <div class="articles-grid" infinite-scroll (scrolled)="onScrollDown()" >
+    <div class="article" *ngFor="let article of articles">
+      <div class="article__hero">
+        <img class="article__hero-image imgix-fluid imgix-bg"
+          src="{{article.image}}"
+         >
+
+      </div>
+      <div class="article__info">
+        <h3 class="article__title"><span>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">{{article.title}}</font>
+            </font>
+          </span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;"> </font>
+          </font>
+        </h3>
+        <div class="article__dek">
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">{{article.description}}</font>
+            </font>
+          </p>
+        </div>
+        <div class="article__meta">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Por {{article.source.name}} {{article.publishedAt}}</font>
+          </font>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showError">
+  <p>ERROR AL CONSULTAR LA API:<br/>Limite de Consultas Excedidas  </p>
+</div>
+<button class="button-up" *ngIf="showButton" (click)="onScrollTop()">🔼</button>
