@@ -20,7 +20,12 @@ const routes: Routes = [
 {
   path:'RemotePlus',
   component: RemotePlusComponent
-}
+},
+{
+  path: '',
+  redirectTo: 'Local',
+  pathMatch: 'full'
+},
 ];
 
 @NgModule({
